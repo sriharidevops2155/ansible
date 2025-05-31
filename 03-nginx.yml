@@ -2,13 +2,13 @@
   hosts: frontend
   become: yes #Sudo access
   tasks:
-    - name: install nginx 
-      ansible.builtin.package:
-        name: nginx 
-        state: present
+  - name: install nginx 
+    ansible.builtin.package:
+      name: nginx 
+      state: present
 
-    - name: Run Nginx 
-      ansible.builtin.service:
-        name: nginx 
-        state: started
-        enabled: yes
+  - name: Run Nginx 
+    ansible.builtin.service:
+      name: nginx 
+      state: started
+      enabled: yes
