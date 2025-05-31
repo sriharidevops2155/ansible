@@ -1,0 +1,7 @@
+- name: hello world 
+  hosts: frontend
+  connection: local #No need of user name and password when connecting with local host by mentioning connection: local
+  tasks:
+  - name: Print Hello world 
+    ansible.builtin.debug: 
+      msg: "Hello World"
