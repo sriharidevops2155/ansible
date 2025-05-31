@@ -1,0 +1,14 @@
+- name: variables from prompt
+  hosts: local
+  connection: local 
+  vars_promt:
+  - name: USERNAME
+    prompt: Please enter the username
+    private: true
+  - name: PASSWORD
+    prompt: Please enter the password
+    private: true
+  tasks: 
+  - name: printing user informaton just for checking purpose 
+    debug: 
+      msg: "Hellow User name is: {{ username }}, password is {{ password }}"
