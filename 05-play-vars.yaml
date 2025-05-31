@@ -8,4 +8,5 @@
   tasks: 
     - name: Print course information
       ansible.builtin.debug:
+      # Vars reference should be surrounded {{}}
         msg: "Hellow {{ COURSE }}, Course Duration: {{ DURATION }}, Trainer is {{ TRAINER }}"
