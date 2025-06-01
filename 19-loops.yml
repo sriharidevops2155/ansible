@@ -9,4 +9,4 @@
     loop:
     - {a: mysql ,b: absent}
     - {a: nginx ,b: absent}
-    - {a: zip ,b: installed}
+    - {a: zip ,b: absent}
