@@ -16,3 +16,11 @@
     - name: Printing the course information 
       debug: 
         msg: "Course is {{ COURSE }}, Duration: {{ DURATION }}, is live ? {{ IS_LIVE }} and tools are {{ TOOLS }} and Concepts {{ CONECPTS }}"
+
+# Output: 
+
+# TASK [Printing the course information] ***************************************************************************************************
+# ok: [localhost] => {
+#     "msg": "Course is DevSecOps with AWS, Duration: 120, is live ? True and tools are ['Linux', 'shell', 'Ansible'] and Concepts {'CI': 'JENKINS', 'SCRIPTING': 'Shell, Ansible, Terraform, Python'}"
+# }
+
