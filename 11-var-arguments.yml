@@ -1,0 +1,21 @@
+- name: variables from inventory
+  hosts: local
+  connection: local
+  tasks: 
+  - name: Print course information
+    debug: 
+      msg: "Hello i'm learning {{ COURSE }}, Duration is: {{ DURATION }}, Trainer is : {{ TRAINER }}"
+
+
+
+
+
+
+
+
+# - name: variables from arguments 
+#   hosts: frontend
+#   tasks:
+#   - name: print course information
+#     debug:
+#       msg: "Hellow I am learning {{ COURSE }}, Duration: {{ DURATION }} , Trainer is: {{ TRAINER }}"
