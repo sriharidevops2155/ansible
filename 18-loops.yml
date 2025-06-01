@@ -5,7 +5,7 @@
   - name: install packages 
     package:
       name: "{{ item }}"
-      state: install
+      state: installed
     loop:
     - mysql
     - nginx 
