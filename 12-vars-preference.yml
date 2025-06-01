@@ -1,0 +1,18 @@
+- name: Understand vars difference 
+  hosts: local
+  connection: local
+  vars:
+    GREETING: "Hello from PLAY"
+  vars_file:
+  - course.yml
+  tasks: 
+  vars_prompt:
+  - name: GREETING
+    prompt: Please enter the greeting variable 
+    private: false
+  tasks: 
+    - name: Print the greeting
+      vars:
+        GREETING: "Hellow from task"
+      debug:
+        msg: "{{ GREETING }}"
