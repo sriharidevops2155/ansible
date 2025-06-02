@@ -29,4 +29,12 @@
         - {'key': 'trainer' , 'value': 'sivakumar'}
     debug:
       msg: "Course Information: {{ course | items2dict }}"
+
+  - name: convert to uppercase 
+    vars:
+      name: "SivaKumar Teaching Devops"
+    debug:
+      msg: "Hello {{ name | upper }}"
+  
+
   
