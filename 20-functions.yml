@@ -36,5 +36,11 @@
     debug:
       msg: "Hello {{ name | upper }}"
   
+  - name: convert to uppercase 
+    vars:
+      name: "SivaKumar Teaching Devops"
+    debug:
+      msg: "Hello {{ name | lower }}"
+  
 
   
