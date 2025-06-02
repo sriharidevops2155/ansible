@@ -1,5 +1,14 @@
 - name: shell vs command 
   hosts: frontend
   tasks: 
+  # - name: Redirect is output to file 
+  #   command: "ls -ltr > /tmp/output.txt"
+
+# TASK [Redirect is output to file] ********************************************************************************************************
+# fatal: [172.31.85.56]: FAILED! => {"changed": true, "cmd": ["ls", "-ltr", ">", "/tmp/output.txt"], "delta": "0:00:00.006186", "end": "2025-06-02 09:06:11.494105", "msg": "non-zero return code", "rc": 2, "start": "2025-06-02 09:06:11.487919", "stderr": "ls: cannot access '>': No such file or directory\nls: cannot access '/tmp/output.txt': No such file or directory", "stderr_lines": ["ls: cannot access '>': No such file or directory", "ls: cannot access '/tmp/output.txt': No such file or directory"], "stdout": "", "stdout_lines": []}
+
+# PLAY RECAP *******************************************************************************************************************************
+# 172.31.85.56               : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+
   - name: Redirect is output to file 
-    command: "ls -ltr > /tmp/output.txt"
+    shell: "ls -ltr > /tmp/output.txt" 
