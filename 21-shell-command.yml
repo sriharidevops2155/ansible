@@ -1,0 +1,5 @@
+- name: shell vs command 
+  hosts: frontend
+  tasks: 
+  - name: Redirect is output to file 
+    command: "ls -ltr > /tmp/output.txt"
