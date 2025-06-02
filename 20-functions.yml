@@ -41,6 +41,11 @@
       name: "SivaKumar Teaching Devops"
     debug:
       msg: "Hello {{ name | lower }}"
+  - name: 
+    vars:
+      ip: "300.567.980.789"
+    debug: 
+      msg: "is {{ ip | ansible.utils.ipaddr }}"
   
 
   
