@@ -12,3 +12,7 @@
 
   - name: Redirect is output to file 
     shell: "ls -ltr > /tmp/output.txt" 
+    register: command_result
+  - name: Print the output
+    debug:
+      msg: "Printing the command output {{ command_result }}"
