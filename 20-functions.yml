@@ -11,4 +11,13 @@
   - name: Print names
     debug:
       msg: "Hello {{ persons | split(',') }}"
+
+  - name: convert map into list 
+    vars:
+      course:
+        name: ansible
+        duration: 10 HR 
+        trainer: Siva Kumar 
+    debug:
+      msg: "Course Information: {{ course | dict2items }}"
   
