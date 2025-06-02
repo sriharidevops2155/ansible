@@ -15,4 +15,11 @@
     register: command_result
   - name: Print the output
     debug:
-      msg: "Printing the command output {{ command_result }}"
+      msg: "{{ command_result }}"
+
+  - name: Redirect is output to file 
+    command: "ls -ltr"
+    register: command_output
+  - name: Print the output
+    debug:
+      msg: "{{ command_output }}"
