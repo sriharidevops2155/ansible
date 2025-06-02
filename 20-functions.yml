@@ -43,7 +43,7 @@
       msg: "Hello {{ name | lower }}"
   - name: 
     vars:
-      ip: "300.567.980.789"
+      ip: "192.168.1.1"
     debug: 
       msg: "is {{ ip | ansible.utils.ipaddr }}"
   
