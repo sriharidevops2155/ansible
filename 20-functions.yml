@@ -21,3 +21,12 @@
     debug:
       msg: "Course Information: {{ course | dict2items }}"
   
+  - name: convert map into list 
+    vars:
+      course:
+        - {'key': 'name' , 'value': 'ansbile'}
+        - {'key': 'duration' , 'value': '10 Hrs'}
+        - {'key': 'trainer' , 'value': 'sivakumar'}
+    debug:
+      msg: "Course Information: {{ course | items2dict }}"
+  
