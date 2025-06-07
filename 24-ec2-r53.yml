@@ -7,7 +7,8 @@
       - backend 
       - frontend
     subnet_id: subnet-0de5b1e6b94ba1ac9
-    sg_id: sg-06bb0f34e665a4180 
+    sg_id: sg-06bb0f34e665a4180
+    zone: daws84s.cloud 
   tasks: 
   - name: Create ec2 instances 
     amazon.aws.ec2_instance:
@@ -25,4 +26,15 @@
     debug:
       msg: "{{ ec2_output }}"
 
-  
+  - name: create route 53 record 
+    amazon.aws.route53:
+      state: present
+      zone: "{{ zone }}"
+      record: "{{ item.item }}.{{ zone }}"
+      type: A
+      ttl: 1
+      value: "{{ item.instances[0].private_ip_address }}"
+      wait: true
+      overwrite: true
+    loop: "{{ec2_output.results }}"
+
