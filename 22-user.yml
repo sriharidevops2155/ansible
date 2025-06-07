@@ -4,4 +4,17 @@
   tasks: 
     - name: check roboshop user exists or not 
       command: id roboshop
-      
+      register: output
+      ignore_errors: true
+
+    - name: Create user 
+      become: yes 
+      command: useradd roboshop
+      when: output.rc != 0 # It means failure i.e roboshop user is not exist
+    
+    - name: User already exists 
+      debug:
+        msg: "user already exists"
+      when: output.rc == 0 # It means failure i.e roboshop user is not exist
+
+    
